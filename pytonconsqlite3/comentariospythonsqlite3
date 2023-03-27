@@ -1,0 +1,14 @@
+import sqlite3 # se importa el modulo sqlite
+#con=sqlite3.connect('C:\\narvaez\\db\\conpython.db')
+con=sqlite3.connect('sqlitepython/conpython.db') # se crea una variable que para conectar sqlite3 con la ruta relativa de la base de datos
+print(type(con)) # imprime si esta conectado
+micursor=con.cursor() # se crea una vaariale que permita iterar sentencias sql en python
+print(type(micursor)) # imprime si esta conectado
+sentencia="SELECT * from alumno;" # se crea una variable con el valor de la sentencia 
+micursor.execute(sentencia) # el cursor ejecuta la variable con su valor 
+for fila in micursor.fetchall(): # recorrame todos los datos 
+    print(fila[0])
+    print(fila[1])
+    print(fila[2])
+    print(fila[3])
+    print('-'*50)
